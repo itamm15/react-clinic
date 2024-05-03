@@ -15,3 +15,14 @@
   padding-top: 50px;
   line-height: 2.5;
 }
+
+.services-description {
+  width: 20rem;
+  height: 160px;
+  margin: 15px;
+  transition: transform 0.3s ease;
+}
+
+.services-description:hover {
+  transform: scale(1.05);
+}
