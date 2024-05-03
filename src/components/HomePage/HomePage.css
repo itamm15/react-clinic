@@ -1,19 +1,17 @@
 .image-container {
-  position: relative;
-  display: inline-block;
+  height: 600px;
 }
 
 .image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.green-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 192, 75, 0.5);
+  object-fit: cover;
+}
+
+.przychodnia-description {
+  background-color: #42cf72;
+  margin-right: -15px;
+  padding: 30px;
+  padding-top: 50px;
+  line-height: 2.5;
 }
