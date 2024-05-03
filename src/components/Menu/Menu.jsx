@@ -15,7 +15,7 @@ const MENU_ITEMS = [
 export function Menu() {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary ">
+      <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
           <Navbar.Brand className="d-flex align-items-center ms-2">
             <h3 className="me-2 mb-0">Przychodnia lekarska</h3>

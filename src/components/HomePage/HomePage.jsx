@@ -6,7 +6,7 @@ import { FaBrain } from "react-icons/fa6";
 import { LuBone } from "react-icons/lu";
 import { FaDiagnoses } from "react-icons/fa";
 import { FaTooth } from "react-icons/fa6";
-
+import trophy from "../../assets/trophy.jpeg";
 
 import "./HomePage.css";
 
@@ -24,7 +24,7 @@ export function HomePage() {
     <div>
       <Row className="no-gutters">
         <Col className="przychodnia-description">
-          <h1 className="text-center">Przychodnia lekarska</h1>
+          <h1 className="text-center">Przychodnia lekarska Świtałka</h1>
           <h4>Zadbaj o swoje zdrowie w naszej przychodni medycznej! </h4>
           <h4>Nasz doświadczony zespół lekarzy jest gotowy, by zadbać o Ciebie i Twoją rodzinę. Zapraszamy do skorzystania z naszych usług medycznych już dziś! </h4>
           <h4>Oferujemy kompleksową opiekę medyczną dla całej rodziny, w tym: </h4>
@@ -57,6 +57,22 @@ export function HomePage() {
               </Col>
           ))}
           </Row>
+      </div>
+      <div>
+        <Row className="trophy-description">
+          <Col className="d-flex justify-content-center align-items-center">
+            <div className="trophy-image-container">
+              <img src={trophy} alt="our trophy image" className="trophy-image"/>
+            </div>
+          </Col>
+          <Col className="trophy-win-description">
+            <h3>Nasza przychodnia, Świtałka,  zdobyła główną nagrodę w konkursie "Zdrowie na Pierwszym Miejscu"!</h3>
+            <h4>Ogłaszamy z dumą, że Nasza przychodnia medyczna została laureatem konkursu <bolder>"Zdrowie na Pierwszym Miejscu"</bolder>.<br /></h4>
+            <h4>Dziękujemy niezawodnemu zespołowi i naszym pacjentom za zaufanie i wsparcie. <br /></h4>
+            <h4>Nasza misja to dbanie o zdrowie społeczności poprzez innowacyjne podejście i wysoką jakość opieki. <br /></h4>
+            <h4>Dołącz do nas i zaufaj profesjonalizmowi!</h4>
+          </Col>
+        </Row>
       </div>
     </div>
   )
