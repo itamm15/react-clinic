@@ -1,4 +1,4 @@
-import { Button, Row, Col, Card} from 'react-bootstrap';
+import { Container, Button, Row, Col, Card} from 'react-bootstrap';
 import doctorhomepage2 from "../../assets/doctorhomepage2.jpg";
 import { FaHeartbeat } from "react-icons/fa";
 import { CiStethoscope } from "react-icons/ci";
@@ -111,6 +111,15 @@ export function HomePage() {
           ))}
         </Row>
       </div>
+      <footer className="bg-dark text-light py-4">
+      <Container>
+        <Row>
+          <Col className="text-center">
+            &copy; 2024 Przychodnia Lekarska Świtałka
+          </Col>
+        </Row>
+      </Container>
+    </footer>
     </div>
   )
 }
