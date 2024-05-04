@@ -15,9 +15,9 @@ const DOCTORS = [
   { person: "Dr. Szymon Szczepała", title: "Pediatra", days: "Czwartek - Piątek", time: "8:00-19:00", icon: <CiStethoscope style={{ width: "70px", height: "70px"}} /> },
 ]
 
-export function DoctorsSchedule() {
+export function DoctorsSchedule({ classname = "bg-body-tertiary" }) {
   return (
-    <div className="bg-body-tertiary">
+    <div className={classname}>
     <h3 className="text-center pt-4">Harmonogram spotkań w naszej przychodni</h3>
     <Row className="d-flex justify-content-center">
       {DOCTORS.map((doctor) => (

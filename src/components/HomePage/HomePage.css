@@ -105,3 +105,7 @@
 .doctors-description:hover {
   transform: scale(1.05);
 }
+
+.specialists-page-background-color {
+  background-color: #42cf72;
+}

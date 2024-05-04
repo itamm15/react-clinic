@@ -1,4 +1,3 @@
-import { Footer } from '../Footer';
 import { DoctorsSchedule } from '../DoctorsSchedule';
 import { Trophy } from '../Trophy';
 import { Specialists } from '../Specialists/Specialists';
@@ -14,7 +13,6 @@ export function HomePage() {
       <Specialists />
       <Trophy />
       <DoctorsSchedule />
-      <Footer />
     </>
   )
 }
