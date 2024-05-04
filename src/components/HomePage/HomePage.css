@@ -61,6 +61,7 @@
   height: 160px;
   margin: 15px;
   transition: transform 0.3s ease;
+  margin-bottom: 40px;
 }
 
 .services-description:hover {
@@ -69,7 +70,6 @@
 
 .trophy-description {
   padding-top: 30px;
-  margin-top: 40px;
   background-color: #42cf72;
   height: 500px;
 }
