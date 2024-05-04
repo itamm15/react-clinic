@@ -1,8 +1,9 @@
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom';
-import { FaUserDoctor, FaPhone } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
 import { MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
+import clinicicon from "../../assets/clinic-icon.png";
 import "./Menu.css";
 
 const MENU_ITEMS = [
@@ -20,7 +21,7 @@ export function Menu() {
         <Container fluid>
           <Navbar.Brand className="d-flex align-items-center ms-2">
             <h3 className="me-2 mb-0">Przychodnia lekarska</h3>
-            <FaUserDoctor />
+            <img src={clinicicon} style={{ width: '40px', height: '40px'}} />
           </Navbar.Brand>
           <Navbar.Toggle id='basic-navbar-nav' />
           <Navbar.Collapse className="justify-content-end me-2" id="basic-navbar-nav">
