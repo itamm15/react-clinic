@@ -7,12 +7,12 @@ import { FaDiagnoses } from "react-icons/fa";
 import { FaTooth } from "react-icons/fa6";
 
 const MEDICAL_SERVICES = [
-  { title: "Kardiolog", description: "Specjalizacja zajmująca się diagnozowaniem i leczeniem chorób serca i układu krążenia.  ", icon: <FaHeartbeat style={{ width: "20px", height: "20px"}} /> },
-  { title: "Neurolog", description: "Zajmuje się diagnozowaniem i leczeniem chorób układu nerwowego, takich jak udary, padaczka, czy stwardnienie rozsiane.", icon: <FaBrain style={{ width: "20px", height: "20px" }} /> },
-  { title: "Ortopeda", description: "Specjalizacja zajmująca się diagnozowaniem i leczeniem urazów, zaburzeń i chorób układu kostno-stawowego.", icon: <LuBone style={{ width: "20px", height: "20px"}} /> },
-  { title: "Stomatolog", description: "Stomatologia to dziedzina medycyny zajmująca się zdrowiem jamy ustnej, zębów i przyzębia.", icon: <FaTooth style={{ width: "20px", height: "20px" }} /> },
-  { title: "Diabetolog", description: "Specjalizacja zajmująca się leczeniem cukrzycy i jej powikłań.", icon: <FaDiagnoses style={{ width: "20px", height: "20px"}} /> },
-  { title: "Pediatra", description: "Koncentruje się na zdrowiu i leczeniu dzieci, od noworodków po młodzież.", icon: <CiStethoscope style={{ width: "20px", height: "20px"}} /> },
+  { title: "Kardiologia", description: "Specjalizacja zajmująca się diagnozowaniem i leczeniem chorób serca i układu krążenia.  ", icon: <FaHeartbeat style={{ width: "20px", height: "20px"}} /> },
+  { title: "Neurologia", description: "Zajmuje się diagnozowaniem i leczeniem chorób układu nerwowego, takich jak udary, padaczka, czy stwardnienie rozsiane.", icon: <FaBrain style={{ width: "20px", height: "20px" }} /> },
+  { title: "Ortopedia", description: "Specjalizacja zajmująca się diagnozowaniem i leczeniem urazów, zaburzeń i chorób układu kostno-stawowego.", icon: <LuBone style={{ width: "20px", height: "20px"}} /> },
+  { title: "Stomatologia", description: "Stomatologia to dziedzina medycyny zajmująca się zdrowiem jamy ustnej, zębów i przyzębia.", icon: <FaTooth style={{ width: "20px", height: "20px" }} /> },
+  { title: "Diabetologia", description: "Specjalizacja zajmująca się leczeniem cukrzycy i jej powikłań.", icon: <FaDiagnoses style={{ width: "20px", height: "20px"}} /> },
+  { title: "Pediatria", description: "Koncentruje się na zdrowiu i leczeniu dzieci, od noworodków po młodzież.", icon: <CiStethoscope style={{ width: "20px", height: "20px"}} /> },
 ];
 
 export function Specialists() {
