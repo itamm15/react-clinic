@@ -1,0 +1,7 @@
+.text-decoration-underline-class:hover {
+  text-decoration: underline;
+}
+
+.navbar-border {
+  border-bottom: 1px solid grey;
+}

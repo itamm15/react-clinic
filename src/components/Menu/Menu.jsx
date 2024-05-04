@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { FaUserDoctor, FaPhone } from "react-icons/fa6";
 import { MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
+import "./Menu.css";
 
 const MENU_ITEMS = [
   { link: '/', title: 'Strona główna' },
@@ -15,7 +16,7 @@ const MENU_ITEMS = [
 export function Menu() {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary navbar-border">
         <Container fluid>
           <Navbar.Brand className="d-flex align-items-center ms-2">
             <h3 className="me-2 mb-0">Przychodnia lekarska</h3>
@@ -25,7 +26,7 @@ export function Menu() {
           <Navbar.Collapse className="justify-content-end me-2" id="basic-navbar-nav">
             <Nav>
               {MENU_ITEMS.map((item) => (
-                <Nav.Link key={item.link} href={item.link} className="text-dark me-2">
+                <Nav.Link key={item.link} href={item.link} className="text-dark me-2 text-decoration-underline-class">
                   <div className="d-flex align-items-center">
                     <h5 className="mb-0">{item.title.toUpperCase()}</h5>
                   </div>
