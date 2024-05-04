@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
+import { Button, Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import { Outlet } from 'react-router-dom';
 import { FaPhone } from "react-icons/fa6";
 import { MdPlace } from "react-icons/md";
@@ -33,6 +33,7 @@ export function Menu() {
                   </div>
                 </Nav.Link>
               ))}
+              <Button variant='success' href='/register'>Zarejestruj się</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
