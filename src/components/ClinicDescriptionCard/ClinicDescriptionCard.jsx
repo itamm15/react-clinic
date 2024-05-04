@@ -20,7 +20,7 @@ export function ClinicDescriptionCard() {
     </Col>
     <Col>
     <div className="image-container">
-      <img src={doctorhomepage2} alt="doctor with digitaizer" className="image" />
+      <img src={doctorhomepage2} alt="lekarz z tabletem" className="image" />
     </div>
     </Col>
   </Row>

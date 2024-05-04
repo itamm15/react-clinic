@@ -7,7 +7,7 @@ export function Trophy() {
     <Row className="trophy-description">
       <Col className="d-flex justify-content-center align-items-center">
         <div className="trophy-image-container">
-          <img src={trophy} alt="our trophy image" className="trophy-image"/>
+          <img src={trophy} alt="nasze trofeum" className="trophy-image"/>
         </div>
       </Col>
       <Col className="trophy-win-description">
