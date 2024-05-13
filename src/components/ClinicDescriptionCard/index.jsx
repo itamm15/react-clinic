@@ -1,1 +1,1 @@
-export * from './ClinicDescriptionCard';;
+export * from "./ClinicDescriptionCard";
