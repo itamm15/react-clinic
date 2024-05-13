@@ -5,14 +5,20 @@ import { SpecialistsPage } from "./components/SpecialistsPage";
 import { NotFound } from "./components/NotFound";
 import { Layout } from "./components/Layout";
 
+const routes = [
+  { path: "/", element: <HomePage /> },
+  { path: "/doctors", element: <SpecialistsPage /> },
+  { path: "*", element: <NotFound /> },
+];
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/doctors" element={<SpecialistsPage />} />
-          <Route path="*" element={<NotFound />} />
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
         </Route>
       </Routes>
       <Footer />

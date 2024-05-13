@@ -1,5 +1,4 @@
 import { Button, Navbar, Nav, Container, Row, Col } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
 import { FaPhone } from "react-icons/fa6";
 import { MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
@@ -76,7 +75,6 @@ export function Menu() {
           </Col>
         </Row>
       </Container>
-      <Outlet />
     </>
   );
 }
