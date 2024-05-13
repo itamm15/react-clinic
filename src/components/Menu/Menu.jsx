@@ -21,7 +21,7 @@ export function Menu() {
         <Container fluid>
           <Navbar.Brand className="d-flex align-items-center ms-2">
             <h3 className="me-2 mb-0">Przychodnia lekarska</h3>
-            <img src={clinicicon} style={{ width: '40px', height: '40px'}} />
+            <img src={clinicicon} style={{ width: '40px', height: '40px'}} alt='clinic icon' />
           </Navbar.Brand>
           <Navbar.Toggle id='basic-navbar-nav' />
           <Navbar.Collapse className="justify-content-end me-2" id="basic-navbar-nav">
