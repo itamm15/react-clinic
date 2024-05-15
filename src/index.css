@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* FIXME
+     This is not ideal, and shount not occur here. Somewhere in the components
+     there is an overflowed element, which causes the scroll bar to appear.
+  */
+  overflow-x: hidden;
 }
 
 code {

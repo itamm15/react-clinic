@@ -1,9 +1,9 @@
-import { Row, Col, Button } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
 import doctorhomepage2 from "../../assets/doctorhomepage2.jpg";
 
 export function ClinicDescriptionCard() {
   return (
-    <Row className="przychodnia-desc">
+    <div className="przychodnia-desc d-flex">
       <Col className="przychodnia-description ms-5">
         <h2 className="text-center">Przychodnia lekarska Świtałka</h2>
         <h4>Zadbaj o swoje zdrowie w naszej przychodni medycznej! </h4>
@@ -45,6 +45,6 @@ export function ClinicDescriptionCard() {
           />
         </div>
       </Col>
-    </Row>
+    </div>
   );
 }
