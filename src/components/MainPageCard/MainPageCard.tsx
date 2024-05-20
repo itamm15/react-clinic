@@ -12,8 +12,8 @@ export function MainPageCard() {
       <div className="text-overlay overlay-description">
         <h1 className="overlay-text">
           Konsultacje <br />
-          Lekarzy
-          <br /> Specjalistów
+          Lekarzy <br />
+          Specjalistów
         </h1>
       </div>
     </div>
