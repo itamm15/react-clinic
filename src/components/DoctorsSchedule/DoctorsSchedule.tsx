@@ -5,8 +5,18 @@ import { FaBrain } from "react-icons/fa6";
 import { LuBone } from "react-icons/lu";
 import { FaDiagnoses } from "react-icons/fa";
 import { FaTooth } from "react-icons/fa6";
+import { IconBaseProps } from "react-icons";
+import { ReactElement } from "react";
 
-const DOCTORS = [
+type Doctor = {
+  person: string;
+  title: string;
+  days: string;
+  time: string;
+  icon: ReactElement<IconBaseProps>;
+};
+
+const DOCTORS: Doctor[] = [
   {
     person: "Dr. Krzysztof Zjadek",
     title: "Kardiolog",
@@ -51,7 +61,13 @@ const DOCTORS = [
   },
 ];
 
-export function DoctorsSchedule({ classname = "bg-body-tertiary" }) {
+type DoctorsScheduleProps = {
+  classname?: string;
+};
+
+export function DoctorsSchedule({
+  classname = "bg-body-tertiary",
+}: DoctorsScheduleProps) {
   return (
     <div className={classname}>
       <h3 className="text-center pt-4">
