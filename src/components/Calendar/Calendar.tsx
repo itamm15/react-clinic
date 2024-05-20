@@ -20,6 +20,7 @@ export function Calendar() {
         initialView="listWeek"
         events={doctorAppointmentEvents}
         height={"auto"}
+        locale={"pl"}
       />
     </div>
   );
