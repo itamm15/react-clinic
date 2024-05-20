@@ -5,7 +5,12 @@ import { IoMdClock } from "react-icons/io";
 import clinicicon from "../../assets/clinic-icon.png";
 import "./Menu.css";
 
-const MENU_ITEMS = [
+type MenuItem = {
+  link: string;
+  title: string;
+};
+
+const MENU_ITEMS: MenuItem[] = [
   { link: "/", title: "Strona główna" },
   { link: "/about", title: "O nas" },
   { link: "/doctors", title: "Specjaliści" },
