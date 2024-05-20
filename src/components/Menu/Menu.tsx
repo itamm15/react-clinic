@@ -48,8 +48,8 @@ export function Menu() {
                   </div>
                 </Nav.Link>
               ))}
-              <Button variant="success" href="/register">
-                Zarejestruj się
+              <Button variant="success" href="/calendar">
+                Umów wizytę
               </Button>
             </Nav>
           </Navbar.Collapse>
