@@ -1,0 +1,8 @@
+.calendar-container {
+  margin: 25px 0px 25px 0px;
+  min-height: 485px;
+}
+
+.fc-list-table {
+  width: 900px !important;
+}
