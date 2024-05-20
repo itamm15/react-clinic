@@ -5,8 +5,16 @@ import { FaBrain } from "react-icons/fa6";
 import { LuBone } from "react-icons/lu";
 import { FaDiagnoses } from "react-icons/fa";
 import { FaTooth } from "react-icons/fa6";
+import { IconBaseProps } from "react-icons";
+import { ReactElement } from "react";
 
-const MEDICAL_SERVICES = [
+type MedicalService = {
+  title: string;
+  description: string;
+  icon: ReactElement<IconBaseProps>;
+};
+
+const MEDICAL_SERVICES: MedicalService[] = [
   {
     title: "Kardiologia",
     description:
