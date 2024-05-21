@@ -21,7 +21,13 @@ export function Calendar() {
         events={doctorAppointmentEvents}
         height={"auto"}
         locale={"pl"}
+        // eventClick={onClickEvent}
       />
     </div>
   );
+
+  // TODO add event click
+  // function onClickEvent(event) {
+  //   // show dialog
+  // }
 }
