@@ -11,9 +11,12 @@ export function Trophy() {
       </Col>
       <Col className="trophy-win-description">
         <h3>
-          Nasza przychodnia zdobyła główną nagrodę w konkursie "Zdrowie na
-          Pierwszym Miejscu"!
+          <strong>
+            Nasza przychodnia zdobyła główną nagrodę w konkursie "Zdrowie na
+            Pierwszym Miejscu"!
+          </strong>
         </h3>
+        <br />
         <h4>
           Ogłaszamy z dumą, że Nasza przychodnia medyczna została laureatem
           konkursu <strong>"Zdrowie na Pierwszym Miejscu"</strong>.<br />
