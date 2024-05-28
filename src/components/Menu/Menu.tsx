@@ -48,7 +48,10 @@ export function Menu() {
                   </div>
                 </Nav.Link>
               ))}
-              <Button variant="success" href="/calendar">
+              <Button className="me-2" variant="success" href="/account">
+                Moje konto
+              </Button>
+              <Button className="me-2" variant="success" href="/calendar">
                 Umów wizytę
               </Button>
             </Nav>
