@@ -3,6 +3,18 @@
   min-height: 485px;
 }
 
+.fc-list-empty {
+  min-height: 400px !important;
+  min-width: 1040px !important;
+}
+
 .fc-list-table {
   width: 900px !important;
+}
+
+.fc-list-day {
+  a {
+    color: #198754 !important;
+    text-decoration: none;
+  }
 }

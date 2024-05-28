@@ -21,6 +21,8 @@ export function Calendar() {
         events={doctorAppointmentEvents}
         height={"auto"}
         locale={"pl"}
+        eventColor="#198754"
+        noEventsText="Brak wizyt, proszę spróbowac ponownie później"
         // eventClick={onClickEvent}
       />
     </div>
