@@ -1,0 +1,14 @@
+.account-accordion {
+  width: 60%;
+  flex-direction: column;
+}
+
+
+.accordion-button {
+  background-color: #198754;
+  color: white;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+}
