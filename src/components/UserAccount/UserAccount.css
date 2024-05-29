@@ -1,10 +1,17 @@
 .account-accordion {
-  width: 60%;
   flex-direction: column;
 }
 
+.account-accordion__item {
+  width: 650px;
+}
 
 .accordion-button {
+  background-color: #198754;
+  color: white;
+}
+
+.accordion-button[aria-expanded="true"] {
   background-color: #198754;
   color: white;
 }

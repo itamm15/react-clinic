@@ -1,7 +1,14 @@
-import { Accordion } from "react-bootstrap";
+import { ReactElement } from "react";
+import { Accordion, Button, Card, Form } from "react-bootstrap";
+import { FaUser } from "react-icons/fa";
 import './UserAccount.css';
 
-const sectionContent = [
+type AccordionSections = {
+  title: string;
+  body: ReactElement;
+}
+
+const sectionContent: AccordionSections[] = [
   {
     title: "Następna wizyta",
     body: (
@@ -55,17 +62,50 @@ const sectionContent = [
 
 export function UserAccount() {
   return (
-    <div className='d-flex justify-content-center m-5'>
-      <Accordion defaultActiveKey={["0"]} className='account-accordion'>
-        {sectionContent.map((section, index) => (
-          <Accordion.Item eventKey={String(index)} className="account-accordion__item" key={index}>
-            <Accordion.Header>{section.title}</Accordion.Header>
-            <Accordion.Body>
-              {section.body}
-            </Accordion.Body>
-          </Accordion.Item>
-        ))}
-      </Accordion>
+    <div className='d-flex justify-content-center align-items-center m-3'>
+      <div style={{ width: '300px'}}>
+        <Card>
+          <Card.Body>
+            <div className='d-flex justify-content-center align-items-center mb-3'>
+              <FaUser style={{ width: '200', height: '200' }} />
+            </div>
+            <Card.Title><h3>Twoje dane</h3></Card.Title>
+            <Card.Text>
+              <Form>
+                <Form.Group controlId='userName'>
+                  <Form.Label>Imie</Form.Label>
+                  <Form.Control type='text' value='Janusz'></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId='userSuname'>
+                  <Form.Label>Nazwisko</Form.Label>
+                  <Form.Control type='text' value='Januszowski'></Form.Control>
+                </Form.Group>
+
+                <Form.Group controlId='userBirtdate'>
+                  <Form.Label>Imie</Form.Label>
+                  <Form.Control type='date' value='2000-01-01'></Form.Control>
+                </Form.Group>
+              </Form>
+              <Button className="d-flex float-start mt-3" variant="success" href="/calendar">
+                Edytuj profil
+              </Button>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+      <div className='d-flex justify-content-center m-5'>
+        <Accordion defaultActiveKey={["0"]} className='account-accordion'>
+          {sectionContent.map((section, index) => (
+            <Accordion.Item eventKey={String(index)} className="account-accordion__item" key={index}>
+              <Accordion.Header>{section.title}</Accordion.Header>
+              <Accordion.Body>
+                {section.body}
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </div>
     </div>
   )
 }
