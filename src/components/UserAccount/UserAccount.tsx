@@ -109,17 +109,17 @@ export function UserAccount() {
               <Form>
                 <Form.Group controlId="userName">
                   <Form.Label>Imie</Form.Label>
-                  <Form.Control type="text" value="Janusz"></Form.Control>
+                  <Form.Control type="text" value="Janusz" disabled></Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="userSuname">
                   <Form.Label>Nazwisko</Form.Label>
-                  <Form.Control type="text" value="Januszowski"></Form.Control>
+                  <Form.Control type="text" value="Januszowski" disabled></Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="userBirtdate">
                   <Form.Label>Imie</Form.Label>
-                  <Form.Control type="date" value="2000-01-01"></Form.Control>
+                  <Form.Control type="date" value="2000-01-01" disabled></Form.Control>
                 </Form.Group>
               </Form>
               <Button
