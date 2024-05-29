@@ -58,15 +58,17 @@ export function Calendar() {
   );
 }
 
+type AppointmentModalProps = {
+  showModal: boolean;
+  setShowModal: Dispatch<React.SetStateAction<boolean>>;
+  selectedEvent: EventClickArg | null;
+};
+
 function AppointmentModal({
   showModal,
   setShowModal,
   selectedEvent,
-}: {
-  showModal: boolean;
-  setShowModal: Dispatch<React.SetStateAction<boolean>>;
-  selectedEvent: EventClickArg | null;
-}): ReactElement {
+}: AppointmentModalProps): ReactElement {
   const title: string = selectedEvent?.event.title ?? "";
   const date: Date | string = selectedEvent?.event.start ?? "";
   const formattedDate: string = date.toLocaleString("en-US", {
