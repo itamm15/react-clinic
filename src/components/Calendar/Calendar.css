@@ -18,3 +18,7 @@
     text-decoration: none;
   }
 }
+
+.fc-event:hover {
+  cursor: pointer;
+}
