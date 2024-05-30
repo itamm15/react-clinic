@@ -1,10 +1,26 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { MdMail, MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
 import { FaPhone, FaPhoneAlt } from "react-icons/fa";
 
 export function ContactPage() {
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handleContentChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setContent(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    setEmail("");
+    setContent("");
+  };
+
   return (
     <Container className="my-5">
       <Row>
@@ -47,6 +63,35 @@ export function ContactPage() {
                 </a>
               </p>
             </div>
+          </div>
+          <div>
+            <h5 className="text-center">Wyślij wiadomość:</h5>
+            <Form>
+              <Form.Group className="mb-3" controlId="formEmail">
+                <Form.Label>Twój adres email:</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Twój adres email"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formContent">
+                <Form.Label>Treść wiadomości:</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Treść wiadomości"
+                  value={content}
+                  onChange={handleContentChange}
+                />
+              </Form.Group>
+
+              <Button variant="success" onClick={handleSubmit}>
+                Wyślij
+              </Button>
+            </Form>
           </div>
         </Col>
         <Col md={6}>
