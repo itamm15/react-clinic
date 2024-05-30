@@ -39,7 +39,7 @@ export function ContactPage() {
             style={{ fontSize: "1.2rem" }}
           >
             <MdMail size={22} />
-            <p className="ms-2 mb-0">switalka@przychodnia.com</p>
+            <p className="ms-2 mb-0"><a href="mailto:switalka@przychodnia.com">switalka@przychodnia.com</a></p>
           </div>
         </Col>
         <Col md={6}>
