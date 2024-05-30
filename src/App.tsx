@@ -15,7 +15,7 @@ const routes = [
   { path: "/calendar", element: <Calendar /> },
   { path: "/account", element: <UserAccount /> },
   { path: "/contact", element: <ContactPage /> },
-  { path: "/about-us", element: <AboutUs /> },
+  { path: "/about", element: <AboutUs /> },
   { path: "*", element: <NotFound /> },
 ];
 

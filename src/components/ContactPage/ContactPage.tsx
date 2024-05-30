@@ -31,7 +31,9 @@ export function ContactPage() {
             style={{ fontSize: "1.2rem" }}
           >
             <FaPhone size={22} />
-            <p className="ms-2 mb-0"><a href="tel:+48 123 456 789">+48 123 456 789</a></p>
+            <p className="ms-2 mb-0">
+              <a href="tel:+48 123 456 789">+48 123 456 789</a>
+            </p>
           </div>
           <h5 className="text-center">Adres email:</h5>
           <div
@@ -39,7 +41,11 @@ export function ContactPage() {
             style={{ fontSize: "1.2rem" }}
           >
             <MdMail size={22} />
-            <p className="ms-2 mb-0"><a href="mailto:switalka@przychodnia.com">switalka@przychodnia.com</a></p>
+            <p className="ms-2 mb-0">
+              <a href="mailto:switalka@przychodnia.com">
+                switalka@przychodnia.com
+              </a>
+            </p>
           </div>
         </Col>
         <Col md={6}>
