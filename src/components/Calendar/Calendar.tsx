@@ -84,13 +84,13 @@ function AppointmentModal({
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <div className='mb-3'>
+          <div className="mb-3">
             <h5>Szczegóły wizyty:</h5>
             Lekarz: {title}
             <br />
             Data: {formattedDate}
           </div>
-          <Form.Group className='mb-3' controlId="calendarFormPhoneNumber">
+          <Form.Group className="mb-3" controlId="calendarFormPhoneNumber">
             <Form.Label>Telefon kontaktowy</Form.Label>
             <Form.Control type="string"></Form.Control>
             <Form.Text className="text-muted">Podaj numer kontaktowy</Form.Text>

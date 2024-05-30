@@ -13,7 +13,7 @@ const routes = [
   { path: "/doctors", element: <SpecialistsPage /> },
   { path: "/calendar", element: <Calendar /> },
   { path: "/account", element: <UserAccount /> },
-  { path: '/contact', element: <ContactPage /> },
+  { path: "/contact", element: <ContactPage /> },
   { path: "*", element: <NotFound /> },
 ];
 
