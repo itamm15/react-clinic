@@ -6,12 +6,14 @@ import { NotFound } from "./components/NotFound";
 import { Layout } from "./components/Layout";
 import { Calendar } from "./components/Calendar";
 import { UserAccount } from "./components/UserAccount";
+import { ContactPage } from "./components/ContactPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
   { path: "/doctors", element: <SpecialistsPage /> },
   { path: "/calendar", element: <Calendar /> },
   { path: "/account", element: <UserAccount /> },
+  { path: '/contact', element: <ContactPage /> },
   { path: "*", element: <NotFound /> },
 ];
 
