@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DoctorsSchedule } from "../DoctorsSchedule/DoctorsSchedule";
 import "./SpecialistsPage.css";
 import { DOCTORS, Doctor } from "./specialistspage.const";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function SpecialistsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");

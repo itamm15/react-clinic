@@ -1,8 +1,8 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { MdMail, MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
-import { FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export function ContactPage() {
   const [email, setEmail] = useState("");

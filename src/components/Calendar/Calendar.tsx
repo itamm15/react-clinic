@@ -6,12 +6,10 @@ import "./Calendar.css";
 import {
   Dispatch,
   ReactElement,
-  SyntheticEvent,
-  useEffect,
   useState,
 } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 type AppointmentEventProps = {
   id: string;
