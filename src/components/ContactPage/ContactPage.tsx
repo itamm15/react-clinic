@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { MdMail, MdPlace } from "react-icons/md";
-import { IoMdClock } from "react-icons/io";
+import { MdMail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 
 export function ContactPage() {
@@ -25,25 +24,9 @@ export function ContactPage() {
     <Container className="my-5">
       <Row>
         <Col md={6}>
-          <h5 className="text-center">Lokalizacja:</h5>
-          <div
-            className="d-flex justify-content-center align-items-center mb-4"
-            style={{ fontSize: "1.2rem" }}
-          >
-            <MdPlace size={30} />
-            <p className="ms-2 mb-0">Nad Reglami 23, 34-520 Zakopane</p>
-          </div>
-          <h5 className="text-center">Godziny otwarcia:</h5>
-          <div
-            className="d-flex justify-content-center align-items-center mb-4"
-            style={{ fontSize: "1.2rem" }}
-          >
-            <IoMdClock size={30} />
-            <p className="ms-2 mb-0">Poniedziałek - Piątek: 8:00 - 19:00</p>
-          </div>
           <div
             className="d-flex justify-content-evenly align-items-center mb-4"
-            style={{ fontSize: "1.2rem" }}
+            style={{ fontSize: "1.0rem" }}
           >
             <div>
               <h5 className="text-center">Adres email:</h5>
