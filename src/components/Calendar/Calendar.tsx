@@ -3,11 +3,7 @@ import listPlugin from "@fullcalendar/list";
 import { DOCTOR_APPOINTMENTS } from "./consts";
 import { EventClickArg, EventSourceInput } from "@fullcalendar/core";
 import "./Calendar.css";
-import {
-  Dispatch,
-  ReactElement,
-  useState,
-} from "react";
+import { Dispatch, ReactElement, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
