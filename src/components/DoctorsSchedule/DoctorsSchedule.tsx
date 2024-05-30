@@ -1,4 +1,5 @@
-import { Row, Col, Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col, Card, Form } from "react-bootstrap";
 import { FaHeartbeat } from "react-icons/fa";
 import { CiStethoscope } from "react-icons/ci";
 import { FaBrain } from "react-icons/fa6";
@@ -7,6 +8,7 @@ import { FaDiagnoses } from "react-icons/fa";
 import { FaTooth } from "react-icons/fa6";
 import { IconBaseProps } from "react-icons";
 import { ReactElement } from "react";
+import "./DoctorsSchedule.css";
 
 type Doctor = {
   person: string;
@@ -68,13 +70,30 @@ type DoctorsScheduleProps = {
 export function DoctorsSchedule({
   classname = "bg-body-tertiary",
 }: DoctorsScheduleProps) {
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredDoctors = DOCTORS.filter((doctor) =>
+    doctor.person.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
   return (
     <div className={classname}>
-      <h3 className="text-center pt-4">
-        Harmonogram spotkań w naszej przychodni
-      </h3>
+      <h3 className="text-center pt-4">Specjaliści w przychodni Świtałka</h3>
       <Row className="d-flex justify-content-center">
-        {DOCTORS.map((doctor) => (
+        <Col xs={12} className="d-flex justify-content-center mb-3">
+          <Form.Control
+            type="text"
+            placeholder="Wyszukaj lekarza..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="input-field"
+          />
+        </Col>
+        {filteredDoctors.map((doctor) => (
           <Col
             key={doctor.person}
             xs={12}
