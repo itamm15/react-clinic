@@ -5,6 +5,7 @@ import { FaBrain, FaDiagnoses, FaHeartbeat, FaTooth } from "react-icons/fa";
 import { LuBone } from "react-icons/lu";
 
 export type Doctor = {
+  id: number;
   person: string;
   title: string;
   days: string;
@@ -14,6 +15,7 @@ export type Doctor = {
 
 export const DOCTORS: Doctor[] = [
   {
+    id: 1,
     person: "Dr. Krzysztof Zjadek",
     title: "Kardiolog",
     days: "Poniedziałek - Piątek",
@@ -21,6 +23,7 @@ export const DOCTORS: Doctor[] = [
     icon: <FaHeartbeat style={{ width: "70px", height: "70px" }} />,
   },
   {
+    id: 2,
     person: "Dr. Karina Wojska",
     title: "Neurolog",
     days: "Poniedziałek - Czwartek",
@@ -28,6 +31,7 @@ export const DOCTORS: Doctor[] = [
     icon: <FaBrain style={{ width: "70px", height: "70px" }} />,
   },
   {
+    id: 3,
     person: "Dr. Karol Poss",
     title: "Ortopeda",
     days: "Wtorek - Piątek",
@@ -35,6 +39,7 @@ export const DOCTORS: Doctor[] = [
     icon: <LuBone style={{ width: "70px", height: "70px" }} />,
   },
   {
+    id: 4,
     person: "Dr. Karol Wojteka",
     title: "Stomatolog",
     days: "Poniedziałek - Piątek",
@@ -42,6 +47,7 @@ export const DOCTORS: Doctor[] = [
     icon: <FaTooth style={{ width: "70px", height: "70px" }} />,
   },
   {
+    id: 5,
     person: "Dr. Magdalena Kowalska",
     title: "Diabetolog",
     days: "Środa - Piątek",
@@ -49,6 +55,7 @@ export const DOCTORS: Doctor[] = [
     icon: <FaDiagnoses style={{ width: "70px", height: "70px" }} />,
   },
   {
+    id: 6,
     person: "Dr. Szymon Szczepała",
     title: "Pediatra",
     days: "Czwartek - Piątek",

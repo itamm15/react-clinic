@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { DoctorsSchedule } from "../DoctorsSchedule/DoctorsSchedule";
 import "./SpecialistsPage.css";
-import { DOCTORS } from "./specialistspage.const";
+import { DOCTORS, Doctor } from "./specialistspage.const";
+import { redirect, useNavigate } from "react-router-dom";
 
 export function SpecialistsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -14,6 +16,13 @@ export function SpecialistsPage() {
     doctor.person.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
+  const onPickDoctor = (
+    event: React.MouseEvent<HTMLElement>,
+    doctor: Doctor,
+  ) => {
+    navigate(`/calendar?doctorId=${doctor.id}`);
+  };
+
   return (
     <div className="SpecialistsPage">
       <DoctorsSchedule
@@ -22,6 +31,7 @@ export function SpecialistsPage() {
         searchTerm={searchTerm}
         handleSearchChange={handleSearchChange}
         filteredDoctors={filteredDoctors}
+        onPickDoctor={onPickDoctor}
       />
     </div>
   );

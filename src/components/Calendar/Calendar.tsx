@@ -11,8 +11,17 @@ import {
   useState,
 } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useLocation, useParams } from "react-router-dom";
+
+type AppointmentEventProps = {
+  id: string;
+  title: string;
+  start: string;
+};
 
 export function Calendar() {
+  const queryParams = new URLSearchParams(useLocation().search);
+  const doctorId = queryParams.get("doctorId");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedEvent, setSelectedEvent] = useState<EventClickArg | null>(
     null,
@@ -28,12 +37,23 @@ export function Calendar() {
     setShowModal(false);
   };
 
-  const doctorAppointmentEvents: EventSourceInput = DOCTOR_APPOINTMENTS.map(
-    (appointment) => ({
-      id: appointment.id.toString(),
-      title: appointment.person + ", " + appointment.title,
-      start: appointment.date,
-    }),
+  console.log(doctorId);
+
+  const doctorAppointmentEvents: EventSourceInput = DOCTOR_APPOINTMENTS.reduce(
+    (acc: AppointmentEventProps[], appointment) => {
+      const doctorAppointment = {
+        id: appointment.id.toString(),
+        title: appointment.person + ", " + appointment.title,
+        start: appointment.date,
+      };
+
+      if (doctorId === undefined) acc.push(doctorAppointment);
+      if (doctorId === appointment.doctorId.toString())
+        acc.push(doctorAppointment);
+
+      return acc;
+    },
+    [],
   );
 
   return (

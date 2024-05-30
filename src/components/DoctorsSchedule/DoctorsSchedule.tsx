@@ -6,16 +6,18 @@ type DoctorsScheduleProps = {
   classname?: string;
   shouldShowInput?: boolean;
   searchTerm?: string;
-  handleSearchChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   filteredDoctors?: Doctor[];
+  handleSearchChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onPickDoctor?: (event: React.MouseEvent<HTMLElement>, doctor: Doctor) => void;
 };
 
 export function DoctorsSchedule({
   classname = "bg-body-tertiary",
   shouldShowInput = false,
   searchTerm,
-  handleSearchChange,
   filteredDoctors,
+  handleSearchChange,
+  onPickDoctor,
 }: DoctorsScheduleProps) {
   const doctors = filteredDoctors ? filteredDoctors : DOCTORS;
 
@@ -42,7 +44,12 @@ export function DoctorsSchedule({
             lg={6}
             className="d-flex align-items-center justify-content-center"
           >
-            <Card className="doctors-description">
+            <Card
+              className="doctors-description"
+              {...(onPickDoctor && {
+                onClick: (event) => onPickDoctor(event, doctor),
+              })}
+            >
               <Card.Body>
                 <div className="d-flex align-items-center">
                   <div className="me-3">{doctor.icon}</div>
