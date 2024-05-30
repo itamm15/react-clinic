@@ -7,7 +7,7 @@ import { Layout } from "./components/Layout";
 import { Calendar } from "./components/Calendar";
 import { UserAccount } from "./components/UserAccount";
 import { ContactPage } from "./components/ContactPage";
-import { AboutUs } from "./components/AboutUs";
+import { AboutUsPage } from "./components/AboutUsPage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -15,7 +15,7 @@ const routes = [
   { path: "/calendar", element: <Calendar /> },
   { path: "/account", element: <UserAccount /> },
   { path: "/contact", element: <ContactPage /> },
-  { path: "/about", element: <AboutUs /> },
+  { path: "/about", element: <AboutUsPage /> },
   { path: "*", element: <NotFound /> },
 ];
 

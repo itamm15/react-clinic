@@ -1,8 +1,8 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import doctor from "../../assets/doctoraboutus.jpeg";
-import "./AboutUs.css";
+import "./AboutUsPage.css";
 
-export function AboutUs() {
+export function AboutUsPage() {
   return (
     <Container className="my-5">
       <Row>
@@ -41,5 +41,3 @@ export function AboutUs() {
     </Container>
   );
 }
-
-export default AboutUs;
