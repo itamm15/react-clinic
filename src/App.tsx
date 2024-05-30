@@ -8,6 +8,7 @@ import { Calendar } from "./components/Calendar";
 import { UserAccount } from "./components/UserAccount";
 import { ContactPage } from "./components/ContactPage";
 import { AboutUsPage } from "./components/AboutUsPage";
+import { ServicePage } from "./components/ServicePage";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -16,6 +17,7 @@ const routes = [
   { path: "/account", element: <UserAccount /> },
   { path: "/contact", element: <ContactPage /> },
   { path: "/about", element: <AboutUsPage /> },
+  { path: "/services", element: <ServicePage /> },
   { path: "*", element: <NotFound /> },
 ];
 
