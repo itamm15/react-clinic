@@ -1,5 +1,10 @@
 import { DoctorsSchedule } from "../DoctorsSchedule/DoctorsSchedule";
+import "./SpecialistsPage.css";
 
 export function SpecialistsPage() {
-  return <DoctorsSchedule classname="specialists-page-background-color" />;
+  return (
+    <div className="SpecialistsPage">
+      <DoctorsSchedule classname="specialists-page-background-color" />
+    </div>
+  );
 }
