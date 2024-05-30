@@ -90,7 +90,7 @@ function AppointmentModal({
             <br />
             Data: {formattedDate}
           </div>
-          <Form.Group controlId="calendarFormPhoneNumber">
+          <Form.Group className='mb-3' controlId="calendarFormPhoneNumber">
             <Form.Label>Telefon kontaktowy</Form.Label>
             <Form.Control type="string"></Form.Control>
             <Form.Text className="text-muted">Podaj numer kontaktowy</Form.Text>
