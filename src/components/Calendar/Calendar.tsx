@@ -45,7 +45,7 @@ export function Calendar() {
         start: appointment.date,
       };
 
-      if (doctorId === undefined) acc.push(doctorAppointment);
+      if (!doctorId) acc.push(doctorAppointment);
       if (doctorId === appointment.doctorId.toString())
         acc.push(doctorAppointment);
 
