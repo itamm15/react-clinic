@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { MdMail, MdPlace } from "react-icons/md";
 import { IoMdClock } from "react-icons/io";
-import { FaPhone } from "react-icons/fa";
+import { FaPhone, FaPhoneAlt } from "react-icons/fa";
 
 export function ContactPage() {
   return (
@@ -25,27 +25,28 @@ export function ContactPage() {
             <IoMdClock size={30} />
             <p className="ms-2 mb-0">Poniedziałek - Piątek: 8:00 - 19:00</p>
           </div>
-          <h5 className="text-center">Numer kontaktowy:</h5>
           <div
-            className="d-flex justify-content-center align-items-center mb-4"
+            className="d-flex justify-content-evenly align-items-center mb-4"
             style={{ fontSize: "1.2rem" }}
           >
-            <FaPhone size={22} />
-            <p className="ms-2 mb-0">
-              <a href="tel:+48 123 456 789">+48 123 456 789</a>
-            </p>
-          </div>
-          <h5 className="text-center">Adres email:</h5>
-          <div
-            className="d-flex justify-content-center align-items-center mb-4"
-            style={{ fontSize: "1.2rem" }}
-          >
-            <MdMail size={22} />
-            <p className="ms-2 mb-0">
-              <a href="mailto:switalka@przychodnia.com">
-                switalka@przychodnia.com
-              </a>
-            </p>
+            <div>
+              <h5 className="text-center">Adres email:</h5>
+              <p className="ms-2 mb-0">
+                <MdMail size={28} />
+                <a className="p-2" href="mailto:switalka@przychodnia.com">
+                  switalka@przychodnia.com
+                </a>
+              </p>
+            </div>
+            <div>
+              <h5 className="text-center">Numer kontaktowy:</h5>
+              <p className="ms-2 mb-0">
+                <FaPhoneAlt size={22} />{" "}
+                <a className="p-2" href="tel:+48 123 456 789">
+                  +48 123 456 789
+                </a>
+              </p>
+            </div>
           </div>
         </Col>
         <Col md={6}>
