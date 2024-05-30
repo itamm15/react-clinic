@@ -83,12 +83,13 @@ function AppointmentModal({
         <Modal.Title>Rezerwacja wizyty</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Rezerwacja wizyty</p>
         <Form>
-          Szczegóły wizyty: <br />
-          Lekarz: {title}
-          <br />
-          Data: {formattedDate}
+          <div className='mb-3'>
+            <h5>Szczegóły wizyty:</h5>
+            Lekarz: {title}
+            <br />
+            Data: {formattedDate}
+          </div>
           <Form.Group controlId="calendarFormPhoneNumber">
             <Form.Label>Telefon kontaktowy</Form.Label>
             <Form.Control type="string"></Form.Control>
