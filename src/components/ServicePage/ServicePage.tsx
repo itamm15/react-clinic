@@ -11,7 +11,7 @@ export const ServicePage = () => {
       </Row>
       <Row className="mb-5">
         <Col md={6}>
-          <Card className="p-4 mb-4 shadow-sm">
+          <Card className="p-4 mb-2 shadow-sm service-page__card">
             <Card.Body>
               <Card.Title>Badania diagnostyczne</Card.Title>
               <Card.Text>
@@ -24,7 +24,7 @@ export const ServicePage = () => {
           </Card>
         </Col>
         <Col md={6}>
-          <Card className="p-4 mb-4 shadow-sm">
+          <Card className="p-4 mb-4 shadow-sm service-page__card">
             <Card.Body>
               <Card.Title>Konsultacje lekarskie</Card.Title>
               <Card.Text>
@@ -39,7 +39,7 @@ export const ServicePage = () => {
       </Row>
       <Row className="mb-5">
         <Col md={6}>
-          <Card className="p-4 mb-4 shadow-sm">
+          <Card className="p-4 mb-4 shadow-sm service-page__card">
             <Card.Body>
               <Card.Title>Rehabilitacja</Card.Title>
               <Card.Text>
@@ -52,7 +52,7 @@ export const ServicePage = () => {
           </Card>
         </Col>
         <Col md={6}>
-          <Card className="p-4 mb-4 shadow-sm">
+          <Card className="p-4 mb-4 shadow-sm service-page__card">
             <Card.Body>
               <Card.Title>Porady dietetyczne</Card.Title>
               <Card.Text>

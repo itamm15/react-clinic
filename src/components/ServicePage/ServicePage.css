@@ -2,14 +2,14 @@
   background-color: #42cf72;
 }
 
-.service-page > .card {
+.service-page__card {
   border: none;
   border-radius: 0.75rem;
-  min-height: 210px;
+  min-height: 215px;
   transition: transform 0.3s ease;
 }
 
-.service-page > .card:hover {
+.service-page__card:hover {
   transform: scale(1.05);
 }
 
