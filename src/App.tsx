@@ -9,6 +9,7 @@ import { UserAccount } from "./components/UserAccount";
 import { ContactPage } from "./components/ContactPage";
 import { AboutUsPage } from "./components/AboutUsPage";
 import { ServicePage } from "./components/ServicePage";
+import { AccountEdit } from "./components/UserAccount/AccountEdit";
 
 const routes = [
   { path: "/", element: <HomePage /> },
@@ -18,6 +19,7 @@ const routes = [
   { path: "/contact", element: <ContactPage /> },
   { path: "/about", element: <AboutUsPage /> },
   { path: "/services", element: <ServicePage /> },
+  { path: "/accountEdit", element: <AccountEdit /> },
   { path: "*", element: <NotFound /> },
 ];
 
