@@ -46,7 +46,7 @@ export function DoctorsSchedule({
           >
             <Card
               className="doctors-description"
-              style={{ ...(onPickDoctor && { cursor: 'pointer' }) }}
+              style={{ ...(onPickDoctor && { cursor: "pointer" }) }}
               {...(onPickDoctor && {
                 onClick: (event) => onPickDoctor(event, doctor),
               })}

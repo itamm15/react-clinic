@@ -1,1 +1,1 @@
-export * from './AccountEdit';
+export * from "./AccountEdit";
