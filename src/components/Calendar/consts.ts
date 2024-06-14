@@ -245,4 +245,4 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     person: "Dr. Szymon Szczepała",
     date: "2024-06-12 11:00",
   },
-];
+] as const;
