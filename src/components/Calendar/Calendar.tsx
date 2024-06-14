@@ -130,17 +130,15 @@ function AppointmentModal({
               type="text"
               {...register("phoneNumber")}
             />
-            {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}</p>}
-            <Form.Text className="text-muted">Podaj numer kontaktowy</Form.Text>
+            {errors.phoneNumber && <p className="error-message mt-1">{errors.phoneNumber.message}</p>}
           </Form.Group>
-          <Form.Group controlId="calendarFormEmail">
+          <Form.Group controlId="calendarFormEmail" className="mb-4">
             <Form.Label>Adres email</Form.Label>
             <Form.Control
               type="email"
               {...register("email")}
             />
-            {errors.email && <p className="error-message">{errors.email.message}</p>}
-            <Form.Text className="text-muted">Podaj adres email</Form.Text>
+            {errors.email && <p className="error-message mt-1">{errors.email.message}</p>}
           </Form.Group>
           <Modal.Footer>
             <Button variant="success" type="submit">Zarezerwuj wizytę</Button>
