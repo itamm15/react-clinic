@@ -1,3 +1,7 @@
 .AccountEdit__form {
   width: 50%;
 }
+
+.error-message {
+  color: red;
+}
