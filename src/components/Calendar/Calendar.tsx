@@ -73,7 +73,6 @@ export function Calendar() {
   );
 }
 
-
 type AppointmentModalProps = {
   showModal: boolean;
   setShowModal: Dispatch<React.SetStateAction<boolean>>;
@@ -109,6 +108,7 @@ function AppointmentModal({
 
   const onSubmit: SubmitHandler<FormData> = data => {
     console.log(data);
+    // Handle form submission
   };
 
   return (
@@ -130,7 +130,7 @@ function AppointmentModal({
               type="text"
               {...register("phoneNumber")}
             />
-            {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
+            {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}</p>}
             <Form.Text className="text-muted">Podaj numer kontaktowy</Form.Text>
           </Form.Group>
           <Form.Group controlId="calendarFormEmail">
@@ -139,7 +139,7 @@ function AppointmentModal({
               type="email"
               {...register("email")}
             />
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.email && <p className="error-message">{errors.email.message}</p>}
             <Form.Text className="text-muted">Podaj adres email</Form.Text>
           </Form.Group>
           <Modal.Footer>

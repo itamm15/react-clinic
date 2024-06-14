@@ -22,3 +22,7 @@
 .fc-event:hover {
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+}
