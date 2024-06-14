@@ -217,4 +217,32 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     person: "Dr. Karina Wojska",
     date: "2024-06-06 09:00",
   },
+  {
+    id: 31,
+    doctorId: 3,
+    title: "Ortopeda",
+    person: "Dr. Karol Poss",
+    date: "2024-06-07 12:30",
+  },
+  {
+    id: 32,
+    doctorId: 4,
+    title: "Stomatolog",
+    person: "Dr. Karol Wojteka",
+    date: "2024-06-10 10:00",
+  },
+  {
+    id: 33,
+    doctorId: 5,
+    title: "Diabetolog",
+    person: "Dr. Magdalena Kowalska",
+    date: "2024-06-11 14:00",
+  },
+  {
+    id: 34,
+    doctorId: 6,
+    title: "Pediatra",
+    person: "Dr. Szymon Szczepała",
+    date: "2024-06-12 11:00",
+  },
 ];
