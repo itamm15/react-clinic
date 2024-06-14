@@ -2,10 +2,13 @@ import FullCalendar from "@fullcalendar/react";
 import listPlugin from "@fullcalendar/list";
 import { DOCTOR_APPOINTMENTS } from "./consts";
 import { EventClickArg, EventSourceInput } from "@fullcalendar/core";
-import "./Calendar.css";
 import { Dispatch, ReactElement, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import "./Calendar.css";
 
 type AppointmentEventProps = {
   id: string;
@@ -30,8 +33,6 @@ export function Calendar() {
     setSelectedEvent(null);
     setShowModal(false);
   };
-
-  console.log(doctorId);
 
   const doctorAppointmentEvents: EventSourceInput = DOCTOR_APPOINTMENTS.reduce(
     (acc: AppointmentEventProps[], appointment) => {
@@ -72,11 +73,22 @@ export function Calendar() {
   );
 }
 
+
 type AppointmentModalProps = {
   showModal: boolean;
   setShowModal: Dispatch<React.SetStateAction<boolean>>;
   selectedEvent: EventClickArg | null;
 };
+
+type FormData = {
+  phoneNumber: string;
+  email: string;
+};
+
+const schema = yup.object({
+  phoneNumber: yup.string().matches(/^[0-9]{9}$/, "Podaj prawidłowy numer telefonu składający się z 9 cyfr").required("Numer telefonu jest wymagany"),
+  email: yup.string().email("Podaj prawidłowy adres email").required("Email jest wymagany")
+}).required();
 
 function AppointmentModal({
   showModal,
@@ -85,11 +97,19 @@ function AppointmentModal({
 }: AppointmentModalProps): ReactElement {
   const title: string = selectedEvent?.event.title ?? "";
   const date: Date | string = selectedEvent?.event.start ?? "";
-  const formattedDate: string = date.toLocaleString("en-US", {
+  const formattedDate: string = new Date(date).toLocaleString("en-US", {
     month: "2-digit",
     day: "2-digit",
     year: "numeric",
   });
+
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit: SubmitHandler<FormData> = data => {
+    console.log(data);
+  };
 
   return (
     <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -97,7 +117,7 @@ function AppointmentModal({
         <Modal.Title>Rezerwacja wizyty</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-3">
             <h5>Szczegóły wizyty:</h5>
             Lekarz: {title}
@@ -106,19 +126,29 @@ function AppointmentModal({
           </div>
           <Form.Group className="mb-3" controlId="calendarFormPhoneNumber">
             <Form.Label>Telefon kontaktowy</Form.Label>
-            <Form.Control type="string"></Form.Control>
+            <Form.Control
+              type="text"
+              {...register("phoneNumber")}
+            />
+            {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
             <Form.Text className="text-muted">Podaj numer kontaktowy</Form.Text>
           </Form.Group>
           <Form.Group controlId="calendarFormEmail">
             <Form.Label>Adres email</Form.Label>
-            <Form.Control type="email"></Form.Control>
+            <Form.Control
+              type="email"
+              {...register("email")}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
             <Form.Text className="text-muted">Podaj adres email</Form.Text>
           </Form.Group>
+          <Modal.Footer>
+            <Button variant="success" type="submit">Zarezerwuj wizytę</Button>
+          </Modal.Footer>
         </Form>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="success">Zarezerwuj wizytę</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
+
+export default Calendar;
