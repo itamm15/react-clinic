@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from "react";
-import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { MdMail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useForm, SubmitHandler } from "react-hook-form";
