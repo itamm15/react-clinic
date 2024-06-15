@@ -9,6 +9,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import "./Calendar.css";
+import { User, useUser } from "../../contexts/UserContext";
 
 type AppointmentEventProps = {
   id: string;
@@ -17,6 +18,7 @@ type AppointmentEventProps = {
 };
 
 export function Calendar() {
+  const { user } = useUser();
   const queryParams = new URLSearchParams(useLocation().search);
   const doctorId = queryParams.get("doctorId");
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -68,6 +70,7 @@ export function Calendar() {
         showModal={showModal}
         setShowModal={handleCloseModal}
         selectedEvent={selectedEvent}
+        user={user}
       />
     </div>
   );
@@ -77,6 +80,7 @@ type AppointmentModalProps = {
   showModal: boolean;
   setShowModal: Dispatch<React.SetStateAction<boolean>>;
   selectedEvent: EventClickArg | null;
+  user: User | null;
 };
 
 type FormData = {
@@ -93,6 +97,7 @@ function AppointmentModal({
   showModal,
   setShowModal,
   selectedEvent,
+  user
 }: AppointmentModalProps): ReactElement {
   const title: string = selectedEvent?.event.title ?? "";
   const date: Date | string = selectedEvent?.event.start ?? "";
@@ -103,7 +108,11 @@ function AppointmentModal({
   });
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: {
+      phoneNumber: user?.phone || "",
+      email: user?.email || ""
+    }
   });
 
   const onSubmit: SubmitHandler<FormData> = data => {
