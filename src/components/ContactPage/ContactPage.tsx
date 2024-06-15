@@ -31,7 +31,6 @@ export function ContactPage() {
   });
 
   const onSubmit: SubmitHandler<FormData> = data => {
-    console.log(data);
     setShowConfirmationModal(true);
   };
 
