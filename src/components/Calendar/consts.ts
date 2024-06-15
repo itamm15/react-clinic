@@ -1,9 +1,10 @@
-type DoctorAppointment = {
+export type DoctorAppointment = {
   id: number;
   doctorId: number;
   title: string;
   person: string;
   date: string;
+  booked: boolean;
 };
 
 export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
@@ -13,6 +14,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-05-01 10:00",
+    booked: false,
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-05-08 10:00",
+    booked: false,
   },
   {
     id: 3,
@@ -27,6 +30,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-05-15 10:00",
+    booked: false,
   },
   {
     id: 4,
@@ -34,6 +38,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-05-22 10:00",
+    booked: false,
   },
   {
     id: 5,
@@ -41,6 +46,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-05-29 10:00",
+    booked: false,
   },
   {
     id: 6,
@@ -48,6 +54,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-05-02 09:00",
+    booked: false,
   },
   {
     id: 7,
@@ -55,6 +62,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-05-09 09:00",
+    booked: false,
   },
   {
     id: 8,
@@ -62,6 +70,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-05-16 09:00",
+    booked: false,
   },
   {
     id: 9,
@@ -69,6 +78,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-05-23 09:00",
+    booked: false,
   },
   {
     id: 10,
@@ -76,6 +86,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-05-30 09:00",
+    booked: false,
   },
   {
     id: 11,
@@ -83,6 +94,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-05-03 12:30",
+    booked: false,
   },
   {
     id: 12,
@@ -90,6 +102,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-05-10 12:30",
+    booked: false,
   },
   {
     id: 13,
@@ -97,6 +110,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-05-17 12:30",
+    booked: false,
   },
   {
     id: 14,
@@ -104,6 +118,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-05-24 12:30",
+    booked: false,
   },
   {
     id: 15,
@@ -111,6 +126,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-05-31 12:30",
+    booked: false,
   },
   {
     id: 16,
@@ -118,6 +134,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Stomatolog",
     person: "Dr. Karol Wojteka",
     date: "2024-05-06 10:00",
+    booked: false,
   },
   {
     id: 17,
@@ -125,6 +142,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Stomatolog",
     person: "Dr. Karol Wojteka",
     date: "2024-05-13 10:00",
+    booked: false,
   },
   {
     id: 18,
@@ -132,6 +150,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Stomatolog",
     person: "Dr. Karol Wojteka",
     date: "2024-05-20 10:00",
+    booked: false,
   },
   {
     id: 19,
@@ -139,6 +158,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Stomatolog",
     person: "Dr. Karol Wojteka",
     date: "2024-05-27 10:00",
+    booked: false,
   },
   {
     id: 20,
@@ -146,6 +166,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Diabetolog",
     person: "Dr. Magdalena Kowalska",
     date: "2024-05-07 14:00",
+    booked: false,
   },
   {
     id: 21,
@@ -153,6 +174,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Diabetolog",
     person: "Dr. Magdalena Kowalska",
     date: "2024-05-14 14:00",
+    booked: false,
   },
   {
     id: 22,
@@ -160,6 +182,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Diabetolog",
     person: "Dr. Magdalena Kowalska",
     date: "2024-05-21 14:00",
+    booked: false,
   },
   {
     id: 23,
@@ -167,6 +190,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Diabetolog",
     person: "Dr. Magdalena Kowalska",
     date: "2024-05-28 14:00",
+    booked: false,
   },
   {
     id: 24,
@@ -174,6 +198,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-05-06 11:00",
+    booked: false,
   },
   {
     id: 25,
@@ -181,6 +206,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-05-13 11:00",
+    booked: false,
   },
   {
     id: 26,
@@ -188,6 +214,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-05-20 11:00",
+    booked: false,
   },
   {
     id: 27,
@@ -195,6 +222,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-05-27 11:00",
+    booked: false,
   },
   {
     id: 28,
@@ -202,6 +230,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-06-03 11:00",
+    booked: false,
   },
   {
     id: 29,
@@ -209,6 +238,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Kardiolog",
     person: "Dr. Krzysztof Zjadek",
     date: "2024-06-05 10:00",
+    booked: false,
   },
   {
     id: 30,
@@ -216,6 +246,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Neurolog",
     person: "Dr. Karina Wojska",
     date: "2024-06-06 09:00",
+    booked: false,
   },
   {
     id: 31,
@@ -223,6 +254,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Ortopeda",
     person: "Dr. Karol Poss",
     date: "2024-06-07 12:30",
+    booked: false,
   },
   {
     id: 32,
@@ -230,6 +262,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Stomatolog",
     person: "Dr. Karol Wojteka",
     date: "2024-06-10 10:00",
+    booked: false,
   },
   {
     id: 33,
@@ -237,6 +270,7 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Diabetolog",
     person: "Dr. Magdalena Kowalska",
     date: "2024-06-11 14:00",
+    booked: false,
   },
   {
     id: 34,
@@ -244,5 +278,6 @@ export const DOCTOR_APPOINTMENTS: DoctorAppointment[] = [
     title: "Pediatra",
     person: "Dr. Szymon Szczepała",
     date: "2024-06-12 11:00",
+    booked: false,
   },
-] as const;
+];
