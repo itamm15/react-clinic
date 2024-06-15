@@ -1,7 +1,10 @@
 import { Button, Card, Form } from "react-bootstrap";
 import { FaUser } from "react-icons/fa";
+import { useUser } from "../../../contexts/UserContext";
 
 export function UserAccountCard() {
+  const { user } = useUser();
+
   return (
     <Card>
       <Card.Body>
@@ -15,23 +18,23 @@ export function UserAccountCard() {
           <Form>
             <Form.Group controlId="userName">
               <Form.Label>Imie</Form.Label>
-              <Form.Control type="text" value="Janusz" disabled></Form.Control>
+              <Form.Control type="text" value={user?.name} disabled></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="userSuname">
               <Form.Label>Nazwisko</Form.Label>
               <Form.Control
                 type="text"
-                value="Januszowski"
+                value={user?.surname}
                 disabled
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="userBirtdate">
-              <Form.Label>Imie</Form.Label>
+            <Form.Group controlId="userEmail">
+              <Form.Label>Email</Form.Label>
               <Form.Control
-                type="date"
-                value="2000-01-01"
+                type="text"
+                value={user?.email}
                 disabled
               ></Form.Control>
             </Form.Group>
