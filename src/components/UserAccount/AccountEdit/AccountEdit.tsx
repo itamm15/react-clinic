@@ -17,8 +17,12 @@ type FormData = {
 
 const schema = yup
   .object({
-    username: yup.string().required("Imię jest wymagane"),
-    surname: yup.string().required("Nazwisko jest wymagane"),
+    username: yup.string()
+      .matches(/^[A-Za-z]+$/, "Imię może zawierać tylko litery")
+      .required("Imię jest wymagane"),
+    surname: yup.string()
+      .matches(/^[A-Za-z]+$/, "Nazwisko może zawierać tylko litery")
+      .required("Nazwisko jest wymagane"),
     email: yup
       .string()
       .email("Podaj prawidłowy adres email")
