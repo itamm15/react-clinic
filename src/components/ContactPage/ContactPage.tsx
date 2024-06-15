@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { ContactPageConfirmationModal } from "./ContactPageConfirmationModal";
+import { useUser } from "../../contexts/UserContext";
 
 type FormData = {
   email: string;
@@ -19,9 +20,14 @@ const schema = yup.object({
 
 export function ContactPage() {
   const [showConfirmationModal, setShowConfirmationModal] = useState<boolean>(false);
+  const { user } = useUser();
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: {
+      email: user?.email || "",
+      content: "",
+    }
   });
 
   const onSubmit: SubmitHandler<FormData> = data => {
