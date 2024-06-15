@@ -1,23 +1,36 @@
 import { ChangeEvent, useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 import { MdMail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import { ContactPageConfirmationModal } from "./ContactPageConfirmationModal";
+
+type FormData = {
+  email: string;
+  content: string;
+};
+
+const schema = yup.object({
+  email: yup.string().email("Podaj prawidłowy adres email").required("Email jest wymagany"),
+  content: yup.string().min(30, "Treść wiadomości musi mieć co najmniej 30 znaków").required("Treść wiadomości jest wymagana"),
+}).required();
 
 export function ContactPage() {
-  const [email, setEmail] = useState("");
-  const [content, setContent] = useState("");
+  const [showConfirmationModal, setShowConfirmationModal] = useState<boolean>(false);
 
-  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit: SubmitHandler<FormData> = data => {
+    console.log(data);
+    setShowConfirmationModal(true);
   };
 
-  const handleContentChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setContent(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    setEmail("");
-    setContent("");
+  const handleCloseConfirmationModal = () => {
+    setShowConfirmationModal(false);
   };
 
   return (
@@ -49,15 +62,15 @@ export function ContactPage() {
           </div>
           <div>
             <h5 className="text-center">Wyślij wiadomość:</h5>
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Label>Twój adres email:</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Twój adres email"
-                  value={email}
-                  onChange={handleEmailChange}
+                  {...register("email")}
                 />
+                {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formContent">
@@ -66,12 +79,12 @@ export function ContactPage() {
                   as="textarea"
                   rows={3}
                   placeholder="Treść wiadomości"
-                  value={content}
-                  onChange={handleContentChange}
+                  {...register("content")}
                 />
+                {errors.content && <p style={{ color: 'red' }}>{errors.content.message}</p>}
               </Form.Group>
 
-              <Button variant="success" onClick={handleSubmit}>
+              <Button variant="success" type="submit">
                 Wyślij
               </Button>
             </Form>
@@ -89,6 +102,8 @@ export function ContactPage() {
           ></iframe>
         </Col>
       </Row>
+
+      <ContactPageConfirmationModal showConfirmationModal={showConfirmationModal} handleCloseConfirmationModal={handleCloseConfirmationModal} />
     </Container>
   );
 }
