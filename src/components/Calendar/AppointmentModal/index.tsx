@@ -1,1 +1,1 @@
-export * from './AppointmentModal';
+export * from "./AppointmentModal";

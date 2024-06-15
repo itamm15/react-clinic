@@ -6,7 +6,10 @@ type ConfirmationModalProps = {
   handleClose: () => void;
 };
 
-export function ConfirmationModal({ showModal, handleClose }: ConfirmationModalProps): ReactElement {
+export function ConfirmationModal({
+  showModal,
+  handleClose,
+}: ConfirmationModalProps): ReactElement {
   return (
     <Modal show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -16,7 +19,9 @@ export function ConfirmationModal({ showModal, handleClose }: ConfirmationModalP
         <p>Twoja wizyta została pomyślnie zarezerwowana.</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="success" onClick={handleClose}>Zamknij</Button>
+        <Button variant="success" onClick={handleClose}>
+          Zamknij
+        </Button>
       </Modal.Footer>
     </Modal>
   );

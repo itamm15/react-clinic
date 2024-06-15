@@ -1,1 +1,1 @@
-export * from './AppointmentModalConfirmation';
+export * from "./AppointmentModalConfirmation";

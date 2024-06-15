@@ -21,7 +21,9 @@ export function Calendar() {
   const doctorId = queryParams.get("doctorId");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [confirmationModal, setConfirmationModal] = useState<boolean>(false);
-  const [selectedEvent, setSelectedEvent] = useState<EventClickArg | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventClickArg | null>(
+    null,
+  );
 
   const handleEventClick = (event: EventClickArg) => {
     setSelectedEvent(event);

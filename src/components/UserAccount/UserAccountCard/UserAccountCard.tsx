@@ -18,7 +18,11 @@ export function UserAccountCard() {
           <Form>
             <Form.Group controlId="userName">
               <Form.Label>Imie</Form.Label>
-              <Form.Control type="text" value={user?.name} disabled></Form.Control>
+              <Form.Control
+                type="text"
+                value={user?.name}
+                disabled
+              ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId="userSuname">
