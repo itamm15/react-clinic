@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import { Button, Form } from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Button, Form, Modal } from "react-bootstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useUser } from '../../../contexts/UserContext';
 import "./AccountEdit.css";
+import { AccountEditModalConfirmation } from './AccountEditModalConfirmation';
 
 type FormData = {
   username: string;
@@ -24,6 +25,8 @@ const schema = yup.object({
 
 export function AccountEdit() {
   const { user, setUser } = useUser();
+  const [confirmationModal, setConfirmationModal] = useState<boolean>(false);
+
   const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -53,7 +56,11 @@ export function AccountEdit() {
       phone: data.phone,
       address: data.address,
     });
-    console.log(data);
+    setConfirmationModal(true);
+  };
+
+  const handleCloseConfirmationModal = () => {
+    setConfirmationModal(false);
   };
 
   return (
@@ -112,6 +119,8 @@ export function AccountEdit() {
           </Button>
         </Form>
       </div>
+
+      <AccountEditModalConfirmation confirmationModal={confirmationModal} handleCloseConfirmationModal={handleCloseConfirmationModal} />
     </div>
   );
 }
