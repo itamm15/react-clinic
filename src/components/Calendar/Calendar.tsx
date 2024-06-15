@@ -22,9 +22,8 @@ export function Calendar() {
   const queryParams = new URLSearchParams(useLocation().search);
   const doctorId = queryParams.get("doctorId");
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [selectedEvent, setSelectedEvent] = useState<EventClickArg | null>(
-    null,
-  );
+  const [confirmationModal, setConfirmationModal] = useState<boolean>(false);
+  const [selectedEvent, setSelectedEvent] = useState<EventClickArg | null>(null);
 
   const handleEventClick = (event: EventClickArg) => {
     setSelectedEvent(event);
@@ -34,6 +33,15 @@ export function Calendar() {
   const handleCloseModal = () => {
     setSelectedEvent(null);
     setShowModal(false);
+  };
+
+  const handleShowConfirmationModal = () => {
+    setShowModal(false);
+    setConfirmationModal(true);
+  };
+
+  const handleCloseConfirmationModal = () => {
+    setConfirmationModal(false);
   };
 
   const doctorAppointmentEvents: EventSourceInput = DOCTOR_APPOINTMENTS.reduce(
@@ -71,6 +79,12 @@ export function Calendar() {
         setShowModal={handleCloseModal}
         selectedEvent={selectedEvent}
         user={user}
+        onConfirm={handleShowConfirmationModal}
+      />
+
+      <ConfirmationModal
+        showModal={confirmationModal}
+        handleClose={handleCloseConfirmationModal}
       />
     </div>
   );
@@ -81,6 +95,7 @@ type AppointmentModalProps = {
   setShowModal: Dispatch<React.SetStateAction<boolean>>;
   selectedEvent: EventClickArg | null;
   user: User | null;
+  onConfirm: () => void;
 };
 
 type FormData = {
@@ -97,7 +112,8 @@ function AppointmentModal({
   showModal,
   setShowModal,
   selectedEvent,
-  user
+  user,
+  onConfirm
 }: AppointmentModalProps): ReactElement {
   const title: string = selectedEvent?.event.title ?? "";
   const date: Date | string = selectedEvent?.event.start ?? "";
@@ -116,8 +132,7 @@ function AppointmentModal({
   });
 
   const onSubmit: SubmitHandler<FormData> = data => {
-    console.log(data);
-    // Handle form submission
+    onConfirm();
   };
 
   return (
@@ -154,6 +169,27 @@ function AppointmentModal({
           </Modal.Footer>
         </Form>
       </Modal.Body>
+    </Modal>
+  );
+}
+
+type ConfirmationModalProps = {
+  showModal: boolean;
+  handleClose: () => void;
+};
+
+function ConfirmationModal({ showModal, handleClose }: ConfirmationModalProps): ReactElement {
+  return (
+    <Modal show={showModal} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Rezerwacja zakończona sukcesem</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>Twoja wizyta została pomyślnie zarezerwowana.</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="success" onClick={handleClose}>Zamknij</Button>
+      </Modal.Footer>
     </Modal>
   );
 }
