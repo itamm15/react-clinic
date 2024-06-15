@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { Button, Form } from "react-bootstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { useUser } from '../../../contexts/UserContext';
 import "./AccountEdit.css";
 
 type FormData = {
@@ -22,11 +23,36 @@ const schema = yup.object({
 }).required();
 
 export function AccountEdit() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-    resolver: yupResolver(schema)
+  const { user, setUser } = useUser();
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      username: user?.name || "",
+      surname: user?.surname || "",
+      email: user?.email || "",
+      phone: user?.phone || "",
+      address: user?.address || ""
+    }
   });
 
+  useEffect(() => {
+    if (user) {
+      setValue("username", user.name);
+      setValue("surname", user.surname);
+      setValue("email", user.email);
+      setValue("phone", user.phone);
+      setValue("address", user.address);
+    }
+  }, [user, setValue]);
+
   const onSubmit: SubmitHandler<FormData> = data => {
+    setUser({
+      name: data.username,
+      surname: data.surname,
+      email: data.email,
+      phone: data.phone,
+      address: data.address,
+    });
     console.log(data);
   };
 
@@ -41,7 +67,7 @@ export function AccountEdit() {
               type="text"
               {...register("username")}
             />
-            {errors.username && <p className="error-message">{errors.username.message}</p>}
+            {errors.username && <p style={{ color: 'red' }}>{errors.username.message}</p>}
           </Form.Group>
 
           <Form.Group controlId="surname">
@@ -50,7 +76,7 @@ export function AccountEdit() {
               type="text"
               {...register("surname")}
             />
-            {errors.surname && <p className="error-message">{errors.surname.message}</p>}
+            {errors.surname && <p style={{ color: 'red' }}>{errors.surname.message}</p>}
           </Form.Group>
 
           <Form.Group controlId="email">
@@ -59,7 +85,7 @@ export function AccountEdit() {
               type="email"
               {...register("email")}
             />
-            {errors.email && <p className="error-message">{errors.email.message}</p>}
+            {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
           </Form.Group>
 
           <Form.Group controlId="phone">
@@ -68,7 +94,7 @@ export function AccountEdit() {
               type="tel"
               {...register("phone")}
             />
-            {errors.phone && <p className="error-message">{errors.phone.message}</p>}
+            {errors.phone && <p style={{ color: 'red' }}>{errors.phone.message}</p>}
           </Form.Group>
 
           <Form.Group controlId="address">
@@ -78,7 +104,7 @@ export function AccountEdit() {
               rows={4}
               {...register("address")}
             />
-            {errors.address && <p className="error-message">{errors.address.message}</p>}
+            {errors.address && <p style={{ color: 'red' }}>{errors.address.message}</p>}
           </Form.Group>
 
           <Button variant="success" type="submit" className="mt-2 mb-2">
