@@ -2,15 +2,12 @@ import FullCalendar from "@fullcalendar/react";
 import listPlugin from "@fullcalendar/list";
 import { DOCTOR_APPOINTMENTS } from "./consts";
 import { EventClickArg, EventSourceInput } from "@fullcalendar/core";
-import { Dispatch, ReactElement, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import "./Calendar.css";
-import { User, useUser } from "../../contexts/UserContext";
+import { useUser } from "../../contexts/UserContext";
 import { AppointmentModal } from "./AppointmentModal";
+import { ConfirmationModal } from "./AppointmentModalConfirmation";
+import { useState } from "react";
+import "./Calendar.css";
 
 type AppointmentEventProps = {
   id: string;
@@ -88,27 +85,6 @@ export function Calendar() {
         handleClose={handleCloseConfirmationModal}
       />
     </div>
-  );
-}
-
-type ConfirmationModalProps = {
-  showModal: boolean;
-  handleClose: () => void;
-};
-
-function ConfirmationModal({ showModal, handleClose }: ConfirmationModalProps): ReactElement {
-  return (
-    <Modal show={showModal} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Rezerwacja zakończona sukcesem</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>Twoja wizyta została pomyślnie zarezerwowana.</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="success" onClick={handleClose}>Zamknij</Button>
-      </Modal.Footer>
-    </Modal>
   );
 }
 
